@@ -26,7 +26,7 @@ export class HealthCheckService {
       const bucketList = await this.s3Client.getS3BucketsList();
       this.logger.debug(bucketList);
       return { success: true };
-    } catch (e) {
+    } catch (e: any) {
       this.logger.error(e);
       throw new ServerError(ServerMessages.AWS_CONN_FAILURE, e.message, 400);
     }
