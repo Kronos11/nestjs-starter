@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "mattsk8sclusterdev-d24c"
+    labels:
+        app: "mattsk8sclusterdev-d24c"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: matts-k8s-cluster-dev86a4-mattsk8sclusterdev-d24c.6e53d424e1d14724a57f.westus2.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "mattsk8sclusterdev-d24c"
+                servicePort: 8080
