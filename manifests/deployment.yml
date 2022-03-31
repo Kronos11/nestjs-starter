@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mattsk8sclusterdev-d24c"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mattsk8sclusterdev-d24c"
+  template:
+    metadata:
+      labels:
+        app: "mattsk8sclusterdev-d24c"
+    spec:
+      containers:
+        - name: "mattsk8sclusterdev-d24c"
+          image: "lmmodernizationreg.azurecr.io/mattsk8sclusterdev"
+          ports:
+          - containerPort: 8080
